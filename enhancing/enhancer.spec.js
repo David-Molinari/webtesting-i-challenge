@@ -25,10 +25,12 @@ describe('enhancer.js', function() {
             expect(fail(item8)).toMatchObject(item9);
         });
     });
-    describe('.succeed(item)', function() {
-
+    describe('.repair(item)', function() {
+        it("should return items with durability set to 100", function () {
+            const item10 = {name: 'a', durability: 100, enhancement: 0};
+            expect(repair(item1)).toMatchObject(item10);
+        })
     });
     describe('.get()', function() {
-
     });
 });

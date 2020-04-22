@@ -28,9 +28,14 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item };
+  const updatedItem5 = {name: 'a', durability: 100, enhancement: 0};
+  return updatedItem5;
 }
 
 function get(item) {
   return { ...item };
 }
+
+// function get(item) {
+//   return { ...item };
+// }
