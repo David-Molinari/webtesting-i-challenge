@@ -6,7 +6,13 @@ module.exports = {
 };
 
 function succeed(item) {
-  return { ...item };
+  if(item.enhancement != 20) {
+    let updatedItem = {...item, enhancement: item.enhancement + 1}
+    console.log(updatedItem);
+    return updatedItem;
+  } else {
+    return item;
+  }
 }
 
 function fail(item) {
