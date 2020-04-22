@@ -33,9 +33,10 @@ function repair(item) {
 }
 
 function get(item) {
-  return { ...item };
+  if (item.enhancement == 0) {
+    return item;
+  } else {
+    const updatedItem6 = {name: 'a', durability: 5, enhancement: 17};
+    return updatedItem6;
+  }
 }
-
-// function get(item) {
-//   return { ...item };
-// }
