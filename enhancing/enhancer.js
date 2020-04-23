@@ -6,37 +6,35 @@ module.exports = {
 };
 
 function succeed(item) {
+  const newItem1 = item;
   if(item.enhancement != 20) {
-    const updatedItem1 = {name: 'a', durability: 0, enhancement: 1};
-    return updatedItem1;
+    return {...newItem1, enhancement: newItem1.enhancement +1};
   } else {
     return item;
   }
 }
 
 function fail(item) {
+  const newItem2 = item;
   if (item.enhancement < 15){
-    const updatedItem2 = {name: 'a', durability: 5, enhancement: 10};
-    return updatedItem2;
+    return {...newItem2, durability: newItem2.durability - 5};
   } else if (item.enhancement == 15) {
-    const updatedItem3 = {name: 'a', durability: 5, enhancement: 15};
-    return updatedItem3;
+    return {...newItem2, durability: newItem2.durability - 10};
   } else {
-    const updatedItem4 = {name: 'a', durability: 5, enhancement: 17};
-    return updatedItem4;
+    return {...newItem2, durability: newItem2.durability - 10, enhancement: newItem2.enhancement - 1};
   }
 }
 
 function repair(item) {
-  const updatedItem5 = {name: 'a', durability: 100, enhancement: 0};
-  return updatedItem5;
+  const newItem3 = item;
+  return {...newItem3, durability: 100};
 }
 
 function get(item) {
-  if (item.enhancement == 0) {
-    return item;
+  newItem4 = item;
+  if (newItem4.enhancement == 0) {
+    return newItem4;
   } else {
-    const updatedItem6 = {name: 'a', durability: 5, enhancement: 17};
-    return updatedItem6;
+    return {...newItem4, name: `[+${newItem4.enhancement}] ${newItem4.name}`};
   }
 }
